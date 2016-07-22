@@ -1,2 +1,2 @@
-AddHandler php54-script .php
+AddHandler php55-script .php
 suPHP_ConfigPath /home/siempresistemas/public_html/agenda
