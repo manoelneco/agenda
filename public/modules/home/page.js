@@ -41,6 +41,10 @@ yum.define([
         },
 
         events: {
+            
+            'select change': function(){
+                console.log('1');
+            },
 
         }
 

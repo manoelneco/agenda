@@ -15,9 +15,9 @@ return array(
 
 	    'default' => array(
 	    	'driver' => 'Pdo',
-			'dsn'    => 'mysql:dbname=calendario_avo;host=localhost;port=3306',
-			'username' => 'root',
-			'password' => '123456',
+			'dsn'    => 'mysql:dbname=agenda_avo;host=agenda_avo.mysql.dbaas.com.br;port=3306',
+			'username' => 'agenda_avo',
+			'password' => 'agenda@mmx1',
 	        'driver_options' => array(
 	            PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
 	        )
