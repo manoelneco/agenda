@@ -10,7 +10,7 @@ Application.config({
     },
 
 	resources: {
-		cache: true
+		cache: false
 	},
 
     environment: {
