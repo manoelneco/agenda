@@ -1,0 +1,49 @@
+body{
+    font-family: Roboto;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+
+.home-page-table{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.home-page-table thead tr td{
+    font-weight: bold;
+}
+
+.home-page-table tr td{
+    /*border: 1px solid #444;*/
+    text-align: center;
+}
+
+.home-page-table tbody tr td{
+    /*border: 1px solid #444;*/
+    text-align: center;
+    height: 56px;
+}
+
+.select2-selection{
+    position: relative;
+    top: -7px;
+}
+
+.select2-container--default .select2-selection--single{
+    outline: none;
+}
+
+.select2-container--open .select2-dropdown--below{
+    margin-top: 11px;
+}
+
+.img-around{
+    width: 49px;
+    height: 49px;
+    border-radius: 49px;
+    border: 1px solid #555;
+    display: block;
+    margin: auto;    
+}
