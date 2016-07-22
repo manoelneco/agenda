@@ -66,7 +66,6 @@ class AgendaRepositorio extends AbstractRepositorio{
                 'dia' => $_agenda->dia,
                 'mes' => $_agenda->mes,
                 'periodo' => $_agenda->periodo,
-                'participante_id' => $_agenda->participanteId,
             ));
 
             $sql->prepareStatementForSqlObject( $stmt )->execute();                
