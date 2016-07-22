@@ -66,8 +66,9 @@ yum.define([
                     app.realtime.publish();  
                 });
 
-
                 EventGlobal.trigger('agenda::update', agenda);
+
+                PI.Url.Hash.to('#voltar');
             }
         }
 
