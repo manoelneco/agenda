@@ -22,6 +22,17 @@ class ParticipanteRepositorio extends AbstractRepositorio{
 		parent::__construct($serviceManager->get('Zend\Db\Adapter\Adapter'), 'participantes', new Participante());
 	}
 
+	public function fetch($id){
+		$sql = new Sql( $this->adapter );
+		
+		$select = $sql->select( $this->table );
+		$select->where(array(
+			'id' => $id
+		));
+
+		return $this->selectWith($select)->current();
+	}
+
 	public function fetchAll(){
         $sql = new Sql( $this->adapter );
 		

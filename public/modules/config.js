@@ -47,7 +47,11 @@ PI.Url.add('Modules', 'Public', '/modules');
  */
 PI.Url.add('Home', 		        'Modules', '/home');
 PI.Url.add('Agenda', 		    'Modules', '/agenda');
+PI.Url.add('Util', 		        'Modules', '/util');
+PI.Url.add('Semana', 		    'Modules', '/semana');
+PI.Url.add('Participante',      'Modules', '/participante');
 
 /**
  * Services
  */
+PI.Service.add('Modules');

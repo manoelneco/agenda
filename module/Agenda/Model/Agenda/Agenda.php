@@ -12,6 +12,7 @@ class Agenda extends AbstractModel{
  		$this->participanteId = isset($data['participante_id']) ? $data['participante_id'] : null;
 		$this->dia = isset($data['dia']) ? $data['dia'] : null;
 		$this->mes = isset($data['mes']) ? $data['mes'] : null;
+		$this->ano = isset($data['ano']) ? $data['ano'] : null;
 		$this->periodo = isset($data['periodo']) ? $data['periodo'] : null;
 	}	
 	

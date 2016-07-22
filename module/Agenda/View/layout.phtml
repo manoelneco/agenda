@@ -1,32 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Agenda</title>
+<html>
 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-        <meta name="mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        
-            
-        <!-- jquery framework -->
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<head>
 
-        <!-- pillar framework -->
-        <script type="text/javascript" src="http://cdn-pillar.s3.amazonaws.com/v2.3/pillar.develop.js?v1.03" app="/modules/app.js?v1" config="/modules/config.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#2196f3">
 
-        <!-- google style -->
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300' rel='stylesheet' type='text/css'>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Agenda Avô</title>
 
-        <!-- select2 -->
-        <script src="lib/select2.js" type="text/javascript" s></script>
-        <link href='lib/select2.css' rel='stylesheet' type='text/css'>
-
-    </head>
-    <body>
-
-        <?php echo $this->content; ?>     
+    <!--framework 7-->
+    <script type="text/javascript" src="http://framework7.io/dist/js/framework7.min.js"></script>
+    <link rel="stylesheet" href="http://framework7.io/dist/css/framework7.material.min.css">
+    <link rel="stylesheet" href="http://framework7.io/dist/css/framework7.material.colors.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet" type="text/css">
     
-    </body>
+    <!-- pillar framework -->
+    <script type="text/javascript" src="http://cdn-pillar.s3.amazonaws.com/v2.3/jquery.js"></script>    
+    <script type="text/javascript" src="http://cdn-pillar.s3.amazonaws.com/v2.3/pillar.develop.js?v1.03" app="/modules/app.js?v1" config="/modules/config.js"></script>
+    
+</head>
+
+<body>
+
+    <?php echo $this->content; ?>
+
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+
+    <!--views-->
+    <div class="views">
+
+        <!--view-->
+        <div class="view view-main">
+
+            <!--pages-->
+            <div class="pages navbar-fixed">
+
+                <!--page-->
+                    <?php echo $this->partial('agenda/agenda/loading.phtml', array()); ?>
+                <!--/page-->
+
+            </div>
+            <!--/pages-->
+
+        </div>
+        <!--/view-->
+
+    </div>
+    <!--/views-->
+
+</body>
+
 </html>

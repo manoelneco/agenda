@@ -6,6 +6,9 @@ use Alpha\Repositorio\AbstractRepositorio;
 use Zend\Db\Sql\Sql;
 use Zend\XmlRpc\Value\ArrayValue;
 
+use Agenda\Model\Participante\Participante;
+use Agenda\Model\Participante\ParticipanteRepositorio;
+
 use Agenda\Model\Agenda\Agenda;
 
 class AgendaRepositorio extends AbstractRepositorio{
@@ -42,6 +45,7 @@ class AgendaRepositorio extends AbstractRepositorio{
             $this->insert(array(
                 'dia' => $agenda->dia,
                 'mes' => $agenda->mes,
+                'ano' => $agenda->ano,
                 'periodo' => $agenda->periodo,
                 'participante_id' => $agenda->participanteId,
             ));
@@ -54,6 +58,7 @@ class AgendaRepositorio extends AbstractRepositorio{
                 'dia' => $agenda->dia,
                 'mes' => $agenda->mes,
                 'periodo' => $agenda->periodo,
+                'ano' => $agenda->ano,
                 'participante_id' => $agenda->participanteId,
             ));
 
@@ -72,8 +77,15 @@ class AgendaRepositorio extends AbstractRepositorio{
         $sql = new Sql( $this->adapter );
 		
 		$select = $sql->select( $this->table );
+        $resultset = $this->selectWith($select)->toArray();
 
-		return $this->selectWith($select)->toArray();
+        $participanteRepositorio = new ParticipanteRepositorio( $this->serviceManager );
+
+        foreach($resultset as $i => &$result){
+            $result['participante'] = $participanteRepositorio->fetch( $result['participanteId'] );
+        }
+
+		return $resultset;
 	}
 	
 }

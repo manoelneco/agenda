@@ -14,12 +14,17 @@ use Agenda\Model\Participante\ParticipanteRepositorio;
 use Agenda\Model\Agenda\Agenda;
 use Agenda\Model\Agenda\AgendaRepositorio;
 
+use Agenda\Model\Config\Config;
+use Agenda\Model\Config\ConfigRepositorio;
+
 class AgendaController extends AbstractActionController {
 
     public function indexAction() {
         $participanteRepositorio = new ParticipanteRepositorio( $this->getServiceLocator() );
+        $configRepositorio = new ConfigRepositorio( $this->getServiceLocator() );
 
         return new ViewModel(array(
+            'config' => $configRepositorio->fetch(),
             'participantes' => $participanteRepositorio->fetchall()
         ));
     }
