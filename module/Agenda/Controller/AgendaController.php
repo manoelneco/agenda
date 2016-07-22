@@ -25,9 +25,7 @@ class AgendaController extends AbstractActionController {
     }
 
     public function allAction(){
-        $agendaRepositorio = new AgendaRepositorio( $this->getServiceLocator() );
-
-        header('Content-Type: application/json');
+        $agendaRepositorio = new AgendaRepositorio( $this->getServiceLocator() );        
 
         return JsonWrapper::Ok( $agendaRepositorio->fetchAll() );
     }
