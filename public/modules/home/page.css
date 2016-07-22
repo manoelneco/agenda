@@ -11,10 +11,6 @@ body{
     margin: 0px;
 }
 
-.home-page-table tr td:nth-child(3){
-    background: #aee1f9;
-}
-
 .home-page-table thead tr td{
     font-weight: bold;
 }

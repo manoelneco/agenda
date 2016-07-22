@@ -46,6 +46,7 @@ PI.Url.add('Modules', 'Public', '/modules');
  * Url Alias Resources
  */
 PI.Url.add('Home', 		        'Modules', '/home');
+PI.Url.add('Agenda', 		    'Modules', '/agenda');
 
 /**
  * Services
