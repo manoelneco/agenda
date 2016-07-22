@@ -27,9 +27,7 @@ class AgendaController extends AbstractActionController {
     public function allAction(){
         $agendaRepositorio = new AgendaRepositorio( $this->getServiceLocator() );
 
-        $this->getServiceLocator()->get('Application')->getEventManager()->attach(\Zend\Mvc\MvcEvent::EVENT_RENDER, function($event){
-            $event->getResponse()->getHeaders()->addHeaderLine('Content-Type', 'application/json');
-        }, -10000);
+        $this->getResponse()->getHeaders()->addHeaders(array('Content-type' => 'application/json'));
 
         return JsonWrapper::Ok( $agendaRepositorio->fetchAll() );
     }
